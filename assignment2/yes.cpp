@@ -58,3 +58,4 @@ void list::displayNode(string t){
     cout<<temp->data;
 
 }
+//yes this is it 
