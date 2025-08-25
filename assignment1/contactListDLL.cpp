@@ -289,21 +289,23 @@ string contactList::search(string sName){
 
 //reversing a list
 void contactList::contactReverse(){
-    contact *c,*t;
+    contact *c,*t,*r;
+    t = NULL;
+    r = NULL;
     c = head;
+    if (head->next == NULL)
+    {
+        return;
+    }
     while (c != NULL)
     {
-        t = c->prev;
-        c->prev=c->next;
-        c->next = t;
-        c = c->next;
+        t = c->next;
+        c -> next = r;
+        r = c;
+        c = t;
     }
-    if (t != NULL)
-    {
-        head = t->prev;
-    }
-    
-    
+    head = r;
+    return; 
 }
 
 
